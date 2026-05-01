@@ -47,7 +47,10 @@ import { O_MNE, PILIRE } from '../data/site';
       height: 100%;
       object-fit: contain;
       object-position: right center;
-      transform: scale(1.1); /* Zazoomování o 10 % */
+      transform: scale(1.2); /* Zazoomování o celkem 20 % */
+      /* Maska pro zneviditelnění levého okraje samotné fotky */
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%);
+      mask-image: linear-gradient(to right, transparent 0%, black 40%);
     }
     .hero-overlay {
       position: absolute;
