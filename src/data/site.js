@@ -23,16 +23,16 @@ export const O_MNE = {
 
 export const PILIRE = [
   {
-    id: 'lego',
-    nazev: 'LEGO Education',
-    popis: 'Jako jeden z šesti certifikovaných lektorů v ČR vás naučím, jak dostat to nejlepší ze sad Spike Essential, Spike Prime, Science či AI.',
-    odkaz: '/lego'
-  },
-  {
     id: 'skoleni',
     nazev: 'Školení komunikace',
     popis: 'Sítě, focení mobilem, Canva a Reels pro obce a neziskovky. Vše prakticky a bez zbytečné teorie (projekt Hájek a Kavka).',
     odkaz: '/skoleni'
+  },
+  {
+    id: 'lego',
+    nazev: 'LEGO Education',
+    popis: 'Jako jeden z šesti certifikovaných lektorů v ČR vás naučím, jak dostat to nejlepší ze sad Spike Essential, Spike Prime, Science či AI.',
+    odkaz: '/lego'
   },
   {
     id: 'prototypci',
