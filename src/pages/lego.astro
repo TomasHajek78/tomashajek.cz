@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { O_MNE } from '../data/site';
+---
+
+<Layout title="LEGO Education">
+  <section style="background: var(--bg-alt); padding: 4rem 0;">
+    <div class="container">
+      <nav style="margin-bottom: 2rem; font-size: 0.9rem; color: var(--text-muted);">
+        <a href="/" style="text-decoration: underline;">Domů</a> / LEGO Education
+      </nav>
+      <h1 style="font-size: 3rem; margin-bottom: 1.5rem; color: var(--secondary);">LEGO Education</h1>
+      <p style="font-size: 1.2rem; max-width: 800px; margin-bottom: 2rem;">
+        Jako <strong>jeden ze šesti certifikovaných lektorů v ČR</strong> školím pedagogy, jak efektivně využívat robotické sady LEGO ve výuce. 
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="grid grid-2" style="align-items: center;">
+        <div>
+          <h2 style="margin-bottom: 1.5rem;">Proč školení se mnou?</h2>
+          <ul style="margin-left: 1.5rem; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+            <li><strong>Zkušenosti z první ruky:</strong> Za poslední 4 roky jsem proškolil přes 600 pedagogů.</li>
+            <li><strong>Kompletní portfolio:</strong> Spike Essential, Spike Prime, Science a brzy také Computer Science a AI.</li>
+            <li><strong>Certifikace přímo od LEGO:</strong> Mám vzdělání přímo od zdroje, což zaručuje nejvyšší kvalitu.</li>
+          </ul>
+          <p style="margin-bottom: 2rem;">
+            Moje školení nejsou o teorii. Jsou o tom, abyste si vše vyzkoušeli, pochopili principy a druhý den mohli začít učit své žáky s nadšením.
+          </p>
+          <a href="#kontakt" class="btn btn-primary">Poptat školení pro vaši školu</a>
+        </div>
+        <div style="background: var(--border); border-radius: 1rem; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-style: italic;">
+          [Zde bude fotka Tomáše při školení s LEGO Spike]
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg-alt);">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Sady, které školím</h2>
+      <div class="grid grid-3">
+        <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+          <h3 style="color: var(--secondary); margin-bottom: 1rem;">Spike Essential</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Základy robotiky a kódování pro 1. stupeň ZŠ. Hravé a intuitivní.</p>
+        </div>
+        <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+          <h3 style="color: var(--secondary); margin-bottom: 1rem;">Spike Prime</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Pokročilé inženýrství a programování pro 2. stupeň ZŠ a víceletá gymnázia.</p>
+        </div>
+        <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+          <h3 style="color: var(--secondary); margin-bottom: 1rem;">LEGO Science & AI</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Nové výukové sady zaměřené na vědu a základy umělé inteligence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

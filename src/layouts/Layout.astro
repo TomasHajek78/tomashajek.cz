@@ -1,0 +1,56 @@
+---
+import '../styles/global.css';
+import { SITE } from '../data/site';
+
+interface Props {
+	title?: string;
+}
+
+const { title } = Astro.props;
+const fullTitle = title ? `${title} | ${SITE.name}` : `${SITE.name} | Multipotenciál`;
+---
+
+<!doctype html>
+<html lang="cs">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={SITE.description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{fullTitle}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+    <header style="border-bottom: 1px solid var(--border); padding: 1rem 0;">
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+        <a href="/" style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--primary);">
+          {SITE.name.toUpperCase()}
+        </a>
+        <nav>
+          <ul style="display: flex; gap: 1.5rem; list-style: none; font-weight: 600; font-size: 0.9rem; text-transform: uppercase;">
+            <li><a href="/lego">LEGO</a></li>
+            <li><a href="/skoleni">Školení</a></li>
+            <li><a href="/foto">Foto</a></li>
+            <li><a href="/projekty">Projekty</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+		<main>
+			<slot />
+		</main>
+
+    <footer style="background: var(--bg-alt); padding: 4rem 0; border-top: 1px solid var(--border); margin-top: 4rem;">
+      <div class="container" style="text-align: center;">
+        <p style="font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 1rem;">{SITE.name}</p>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          &copy; {new Date().getFullYear()} — Profesionál s přátelským přístupem.
+        </p>
+      </div>
+    </footer>
+	</body>
+</html>

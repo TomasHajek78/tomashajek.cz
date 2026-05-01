@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { O_MNE, PILIRE } from '../data/site';
+---
+
+<Layout>
+  {/* HERO SECTION */}
+  <section style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 6rem 0;">
+    <div class="container" style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
+      <div style="text-align: center;">
+        <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--primary);">
+          Tomáš Hájek
+        </h1>
+        <p style="font-size: 1.5rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2.5rem;">
+          Multipotenciál s 25 lety praxe. Lektor komunikace a LEGO Education, fotograf a milovník cestování.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center;">
+          <a href="#pilire" class="btn btn-primary">Moje aktivity</a>
+          <a href="/kontakt" class="btn" style="border: 1px solid var(--border);">Kontakt</a>
+        </div>
+      </div>
+      <div style="margin: 0 auto; width: 280px; height: 280px; background: var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-muted); border: 8px solid white; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); text-align: center; padding: 2rem;">
+        [Zde bude tvůj profesionální portrét]
+      </div>
+    </div>
+  </section>
+
+  {/* TRUST SIGNALS / STATS */}
+  <section style="background: var(--primary); color: white; padding: 4rem 0;">
+    <div class="container">
+      <div class="grid grid-3" style="text-align: center;">
+        {O_MNE.stats.map(stat => (
+          <div>
+            <div style="font-family: var(--font-display); font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">
+              {stat.cislo}
+            </div>
+            <div style="font-size: 1.1rem; opacity: 0.9;">
+              {stat.popisek}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* PILIŘE ČINNOSTI */}
+  <section id="pilire">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 4rem;">Co dělám a co mě baví</h2>
+      <div class="grid grid-2 lg-grid-3">
+        {PILIRE.map(pilir => (
+          <a href={pilir.odkaz} style="background: var(--bg-alt); padding: 2.5rem; border-radius: 1rem; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s;" class="pilir-card">
+            <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 1rem;">{pilir.nazev}</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">{pilir.popis}</p>
+            <span style="font-weight: 600; color: var(--secondary); text-transform: uppercase; font-size: 0.8rem;">Více informací →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .pilir-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      border-color: var(--primary);
+    }
+  </style>
+</Layout>

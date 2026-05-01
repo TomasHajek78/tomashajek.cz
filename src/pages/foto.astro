@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Fotografie & Obrazy">
+  <section style="background: var(--bg-alt); padding: 4rem 0;">
+    <div class="container">
+      <nav style="margin-bottom: 2rem; font-size: 0.9rem; color: var(--text-muted);">
+        <a href="/" style="text-decoration: underline;">Domů</a> / Fotografie & Obrazy
+      </nav>
+      <h1 style="font-size: 3rem; margin-bottom: 1.5rem; color: var(--primary);">Fotografie & Obrazy</h1>
+      <p style="font-size: 1.2rem; max-width: 800px; margin-bottom: 2rem;">
+        Dvě dekády zkušeností za hledáčkem. Od novinářské fotografie přes práci pro radnice až po volnou tvorbu.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 style="margin-bottom: 2rem;">Profesionální praxe</h2>
+      <div class="grid grid-2" style="margin-bottom: 4rem;">
+        <div>
+          <p style="margin-bottom: 1.5rem;">
+            Fotografování se věnuji <strong>přes 25 let</strong>. Moje cesta vedla přes redakce (Lidové noviny), tiskové oddělení Jihomoravského kraje až po aktuální práci pro radnici Brno-střed.
+          </p>
+          <p>
+            V rámci své praxe jsem spravoval i facebookové stránky Jihomoravského kraje, kde jsem propojoval sílu obrazu se strategickou komunikací.
+          </p>
+        </div>
+        <div style="background: var(--bg-alt); padding: 2rem; border-radius: 1rem; border-left: 4px solid var(--primary);">
+          <h3 style="margin-bottom: 1rem;">Reference</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li>✓ Lidové noviny & další média</li>
+            <li>✓ Jihomoravský kraj (Press oddělení)</li>
+            <li>✓ Radnice Brno-střed</li>
+            <li>✓ Komerční a eventové focení</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr style="border: 0; border-top: 1px solid var(--border); margin: 4rem 0;" />
+
+      <h2 style="margin-bottom: 1.5rem;" id="obrazy">Kousek světa k vám domů</h2>
+      <p style="margin-bottom: 3rem; max-width: 700px;">
+        V archivu mám tisíce snímků, z nichž řada již zdobí interiéry jako obrazy na plátně. Vybral jsem pro vás 20 nejoblíbenějších, které si můžete objednat přes formulář níže.
+      </p>
+
+      <div class="grid grid-3" style="margin-bottom: 4rem;">
+        {/* Placeholder pro galerii */}
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div style="background: var(--border); border-radius: 0.5rem; aspect-ratio: 3/2; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.8rem; text-align: center; padding: 1rem;">
+            [Zde bude ukázka obrazu č. {i + 1}]
+          </div>
+        ))}
+      </div>
+
+      <div id="objednavka" style="background: var(--bg-alt); padding: 3rem; border-radius: 1rem; max-width: 600px; margin: 0 auto;">
+        <h3 style="text-align: center; margin-bottom: 2rem;">Objednávkový formulář</h3>
+        <form style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div>
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Jméno a příjmení</label>
+            <input type="text" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;" required />
+          </div>
+          <div>
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">E-mail</label>
+            <input type="email" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;" required />
+          </div>
+          <div>
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">O jaký obraz máte zájem? (Číslo nebo popis)</label>
+            <textarea style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem; min-height: 100px;" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="justify-content: center;">Odeslat nezávaznou poptávku</button>
+          <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center;">
+            Po odeslání se vám ozvu a domluvíme detaily tisku, rozměry a dopravu.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>
