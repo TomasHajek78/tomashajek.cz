@@ -1,13 +1,13 @@
 :root {
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --secondary: #f97316; /* Oranžová pro akcenty */
-  --accent: #14b8a6; /* Tyrkysová */
+  --primary: #1e2f2f; /* Tmavá břidlicová / lesní zelená */
+  --primary-dark: #141f1f;
+  --secondary: #c89666; /* Teplá písková / koňaková */
+  --accent: #4b634d; /* Šalvějová zelená */
   --bg: #ffffff;
-  --bg-alt: #f8fafc;
-  --text: #0f172a;
-  --text-muted: #64748b;
-  --border: #e2e8f0;
+  --bg-alt: #fcfaf7; /* Velmi jemný krémový nádech */
+  --text: #1a1a1a;
+  --text-muted: #5c6363;
+  --border: #e8e2db;
   
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Oswald', sans-serif;
