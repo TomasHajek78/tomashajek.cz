@@ -46,11 +46,11 @@ import { O_MNE, PILIRE } from '../data/site';
       width: 100%;
       height: 100%;
       object-fit: contain;
-      object-position: right center;
-      transform: scale(1.2); /* Zazoomování o celkem 20 % */
-      /* Maska pro zneviditelnění levého okraje samotné fotky */
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%);
-      mask-image: linear-gradient(to right, transparent 0%, black 40%);
+      object-position: 80% center; /* Posunuto vlevo, aby bylo vidět i pravé ucho a kousek pozadí vpravo */
+      transform: scale(1.2);
+      /* Maska: od 2/3 (cca 66 %) doprava je fotka vidět, doleva se rozpíjí */
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 66%);
+      mask-image: linear-gradient(to right, transparent 0%, black 66%);
     }
     .hero-overlay {
       position: absolute;
