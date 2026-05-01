@@ -45,8 +45,8 @@ import { O_MNE, PILIRE } from '../data/site';
     .hero-bg img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: center right; /* Aby byl obličej vpravo vidět */
+      object-fit: contain; /* Celá fotka bez ořezu (odzoomováno) */
+      object-position: right center; /* Zarovnání k pravému okraji */
     }
     .hero-overlay {
       position: absolute;
