@@ -45,9 +45,8 @@ import { O_MNE, PILIRE } from '../data/site';
     .hero-bg img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      object-position: 80% center; /* Posunuto vlevo, aby bylo vidět i pravé ucho a kousek pozadí vpravo */
-      /* scale odstraněn - nyní 100% pro zarovnání k okraji */
+      object-fit: cover; /* Vyplní celý prostor bez mezer */
+      object-position: 80% center; /* Zachová tvář i ucho v záběru */
       /* Maska: od 2/3 (cca 66 %) doprava je fotka vidět, doleva se rozpíjí */
       -webkit-mask-image: linear-gradient(to right, transparent 0%, black 66%);
       mask-image: linear-gradient(to right, transparent 0%, black 66%);
