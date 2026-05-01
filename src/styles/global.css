@@ -1,8 +1,8 @@
 :root {
-  --primary: #000000; /* Čistá černá pro eleganci a sílu */
+  --primary: #000000;
   --primary-dark: #1a1a1a;
-  --secondary: #e63946; /* Výrazná červená pro energii */
-  --accent: #2d6a4f; /* Hluboká lesní zelená pro klid a přírodu */
+  --secondary: #ff4d5a; /* Rozjasněná červená */
+  --accent: #34a853; /* Rozjasněná zelená */
   --bg: #ffffff;
   --bg-alt: #f8f9fa;
   --text: #000000;
