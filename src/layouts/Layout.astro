@@ -24,35 +24,144 @@ const fullTitle = title ? `${title} | ${SITE.name}` : `${SITE.name} | Multipoten
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
 	</head>
 	<body>
-    <header style="border-bottom: 1px solid var(--border); padding: 1rem 0;">
-      <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-        <a href="/" style="font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; color: #000; letter-spacing: 0.05em; line-height: 1;">
+    <header class="site-header">
+      <div class="container header-container">
+        <a href="/" class="logo">
           TOMÁŠ <span style="color: var(--secondary);">HÁJEK</span>
         </a>
-        <nav>
-          <ul style="display: flex; gap: 1.5rem; list-style: none;">
-            <li><a href="/skoleni" style="color: var(--text); font-weight: 500;">Školení</a></li>
-            <li><a href="/lego" style="color: var(--text); font-weight: 500;">LEGO</a></li>
-            <li><a href="/prototypci" style="color: var(--text); font-weight: 500;">Vzdělávání</a></li>
-            <li><a href="/foto" style="color: var(--text); font-weight: 500;">Foto</a></li>
-            <li><a href="/projekty" style="color: var(--text); font-weight: 500;">Projekty</a></li>
-            <li><a href="/kontakt" style="color: var(--text); font-weight: 500;">Kontakt</a></li>
+        
+        <button id="menu-toggle" class="menu-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="site-nav" class="site-nav">
+          <ul>
+            <li><a href="/skoleni">Školení</a></li>
+            <li><a href="/lego">LEGO</a></li>
+            <li><a href="/prototypci">Vzdělávání</a></li>
+            <li><a href="/foto">Foto</a></li>
+            <li><a href="/projekty">Projekty</a></li>
+            <li><a href="/kontakt">Kontakt</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-		<main>
-			<slot />
-		</main>
+    <main>
+      <slot />
+    </main>
 
-    <footer style="background: var(--bg-alt); padding: 4rem 0; border-top: 1px solid var(--border); margin-top: 4rem;">
+    <footer style="background: var(--primary); color: white; padding: 4rem 0; margin-top: 4rem;">
       <div class="container" style="text-align: center;">
-        <p style="font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 1rem;">{SITE.name}</p>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">
-          &copy; {new Date().getFullYear()} — Profesionál s přátelským přístupem.
-        </p>
+        <p>&copy; {new Date().getFullYear()} {SITE.author}. Všechna práva vyhrazena.</p>
       </div>
     </footer>
+
+    <style>
+      .site-header {
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 0;
+        background: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-family: var(--font-display);
+        font-size: clamp(1.2rem, 5vw, 2.1rem); /* Responzivní velikost */
+        font-weight: 700;
+        color: #000;
+        letter-spacing: 0.05em;
+        line-height: 1;
+        white-space: nowrap; /* Zabránění zalomení */
+      }
+      .site-nav ul {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+      }
+      .site-nav a {
+        color: var(--text);
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .site-nav a:hover {
+        color: var(--secondary);
+      }
+
+      /* HAMBURGER MENU STYLES */
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1100;
+      }
+      .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: #000;
+        transition: 0.3s;
+      }
+
+      @media (max-width: 992px) {
+        .menu-toggle {
+          display: flex;
+        }
+        .site-nav {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 80%;
+          height: 100vh;
+          background: #fff;
+          box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+          transition: 0.3s;
+          padding: 8rem 2rem 2rem;
+          z-index: 1000;
+        }
+        .site-nav.is-open {
+          right: 0;
+        }
+        .site-nav ul {
+          flex-direction: column;
+          gap: 2rem;
+          font-size: 1.5rem;
+        }
+        /* Animace hamburgeru */
+        .menu-toggle.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .menu-toggle.is-active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+      }
+    </style>
+
+    <script>
+      const toggle = document.getElementById('menu-toggle');
+      const nav = document.getElementById('site-nav');
+      
+      toggle?.addEventListener('click', () => {
+        nav?.classList.toggle('is-open');
+        toggle?.classList.toggle('is-active');
+      });
+
+      // Zavření menu při kliknutí na odkaz
+      nav?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('is-open');
+          toggle?.classList.remove('is-active');
+        });
+      });
+    </script>
 	</body>
 </html>
