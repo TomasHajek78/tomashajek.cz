@@ -25,31 +25,31 @@ export const PILIRE = [
   {
     id: 'skoleni',
     nazev: 'Školení komunikace',
-    popis: 'Sítě, focení mobilem, Canva a Reels pro obce a neziskovky. Vše prakticky a bez zbytečné teorie (projekt Hájek a Kavka).',
+    popis: 'Sociální sítě, focení mobilem a digitální dovednosti pro moderní obce a neziskovky. Prakticky, s nadhledem a bez zbytečné teorie.',
     odkaz: '/skoleni'
   },
   {
     id: 'lego',
     nazev: 'LEGO Education',
-    popis: 'Jako jeden z šesti certifikovaných lektorů v ČR vás naučím, jak dostat to nejlepší ze sad Spike Essential, Spike Prime, Science či AI.',
+    popis: 'Využijte potenciál LEGO Education na maximum. Jako certifikovaný lektor propojuji hru s robotikou, vědou a moderními technologiemi.',
     odkaz: '/lego'
   },
   {
     id: 'prototypci',
     nazev: 'Prototýpci & Vzdělávání',
-    popis: 'Projektové dny pro školy, robotika s Ozoboty a lektorování podnikavosti v rámci Asociace podnikavé Česko.',
+    popis: 'Rozvíjíme podnikavost a kreativitu u dětí. Od robotiky s Ozoboty až po inovativní metodiku pro školy 21. století.',
     odkaz: '/prototypci'
   },
   {
     id: 'foto',
     nazev: 'Fotografie & Obrazy',
-    popis: 'Dvě dekády za hledáčkem. Zkušenosti z novin i velkých úřadů. A také e-shop, kde si mé oblíbené snímky můžete pořídit na plátně.',
+    popis: 'Dvě dekády zkušeností za hledáčkem. Od reportáží pro velká média až po limitované autorské tisky pro váš interiér.',
     odkaz: '/foto'
   },
   {
     id: 'projekty',
-    nazev: 'Projekty & Cestování',
-    popis: 'Objevujeme svět, Milion plechovek, Youtube o fotovoltaice nebo komunita kolem hodinek Prim.',
+    nazev: 'Projekty & Vášeň',
+    popis: 'Cestování s dětmi, komunita kolem hodinek Prim nebo edukace o fotovoltaice. Život je příliš krátký na jedinou profesi.',
     odkaz: '/projekty'
   }
 ];
