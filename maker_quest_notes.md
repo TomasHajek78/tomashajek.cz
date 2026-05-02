@@ -27,7 +27,23 @@ Aplikace bude obsahovat 9 hlavních misí:
 - Export anonymních dat o podnikavosti pro analýzu.
 - (Později) Video-průvodce jednotlivými misemi.
 
-## Technický stack (návrh)
-- Next.js (Frontend & Backend), Tailwind CSS, Supabase (DB).
+## Témata pro diskuzi (Zítra)
 
-*Poznámka: Projekt bude realizován v nové složce "Maker Quest", jakmile bude zpřístupněna ve workspace.*
+### 1. Offline režim a dostupnost dat
+- **Řešení:** PWA (Progressive Web App) se Service Workery. Umožní dětem plnit úkoly i tam, kde je špatný signál (v halách výstaviště).
+- **Technologie:** `IndexedDB` v prohlížeči pro ukládání fotek a audia přímo v mobilu. Jakmile se telefon připojí k Wi-Fi/4G, data se automaticky "dosypou" na server.
+
+### 2. Webová vs. Nativní aplikace (iOS/Android)
+- **Web (PWA):** Nulové bariéry (sken QR -> hra). Nižší náklady. Ideální pro jednorázovou akci jako Maker Faire.
+- **Nativní:** Nutnost stahovat z App Store (velká bariéra). Výhoda jen pokud by aplikace měla sloužit celoročně s push notifikacemi.
+
+### 3. Monetizace a škálování
+- **B2C:** Přímá platba u vstupu (QR kód s platební bránou).
+- **B2B:** Prodej licence celému Maker Fairu jako "oficiální doprovodný program".
+- **Whitelabel:** Možnost upravit aplikaci pro jakýkoliv jiný festival nebo vědecké centrum.
+
+### 4. Sběr a vyhodnocení dat
+- **Storage:** Supabase (zabezpečená SQL databáze) – ideální pro anonymizovaná data o podnikavosti.
+- **Analýza:** Dashboard (např. Grafana nebo vlastní admin panel), který v reálném čase ukazuje metriky: "Kde jsou děti nejvíce kreativní?", "Jaká témata je nejvíc pálí?".
+
+*Všechny tyto body zítra probereme detailně! Dobrou noc.*
